@@ -3,7 +3,7 @@ class CreateConversations < ActiveRecord::Migration[6.0]
     create_table :conversations do |t|
       t.belongs_to :student, null: false, foreign_key: true
       t.belongs_to :teacher, null: false, foreign_key: true
-      t.string :class
+      t.string :klass
       t.string :topic
       t.string :urgency
       t.boolean :office_hours

@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2020_07_15_151411) do
   create_table "conversations", force: :cascade do |t|
     t.bigint "student_id", null: false
     t.bigint "teacher_id", null: false
-    t.string "class"
+    t.string "klass"
     t.string "topic"
     t.string "urgency"
     t.boolean "office_hours"
@@ -49,7 +49,8 @@ ActiveRecord::Schema.define(version: 2020_07_15_151411) do
   end
 
   create_table "students", force: :cascade do |t|
-    t.string "name"
+    t.string "first_name"
+    t.string "last_name"
     t.string "email"
     t.integer "age"
     t.string "dob"
@@ -67,7 +68,8 @@ ActiveRecord::Schema.define(version: 2020_07_15_151411) do
   end
 
   create_table "teachers", force: :cascade do |t|
-    t.string "name"
+    t.string "first_name"
+    t.string "last_name"
     t.string "subject"
     t.string "email"
     t.datetime "created_at", precision: 6, null: false
