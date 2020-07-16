@@ -8,4 +8,7 @@ class Student < ApplicationRecord
         Time.now.year - self.dob.slice(0,4).to_i
     end
     
+    def fullname
+        "#{self.first_name} #{self.last_name}"
+    end
 end

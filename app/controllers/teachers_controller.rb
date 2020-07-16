@@ -8,5 +8,4 @@ class TeachersController < ApplicationController
         @teacher = Teacher.find(params[:id])
         render json: @teacher
     end
-
 end
