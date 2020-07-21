@@ -266,6 +266,9 @@ StudentClass.create(student_id: 40, teacher_class_id: 32)
 
 puts "creating conversations"
 Conversation.create(teacher_id: 1, student_id: 1, klass: "Biology", topic: "homework", urgency: "immediate", office_hours: true, description: "help", teacher_response: true, response: "check your email", time: "2:00pm today via zoom")
+Conversation.create(teacher_id: 3, student_id: 1, klass: "Algebra I", topic: "homework", urgency: "immediate", office_hours: false, description: "help", teacher_response: true, response: "check your email")
+Conversation.create(teacher_id: 5, student_id: 1, klass: "US History I", topic: "homework", urgency: "immediate", office_hours: false, description: "help", teacher_response: false)
+Conversation.create(teacher_id: 7, student_id: 1, klass: "English I", topic: "homework", urgency: "immediate", office_hours: true, description: "help", teacher_response:false)
 Conversation.create(teacher_id: 1, student_id: 2, klass: "Chemistry", topic: "classwork", urgency: "immediate", office_hours: true, description: "help", teacher_response: true, response: "check your email", time: "2:00pm today via zoom")
 Conversation.create(teacher_id: 1, student_id: 3, klass: "Physics", topic: "lecture", urgency: "end of day", office_hours: false, description: "help", teacher_response: true, response: "check your email")
 Conversation.create(teacher_id: 1, student_id: 4, klass: "AP Biology", topic: "homework", urgency: "end of day", office_hours: false, description: "help", teacher_response: true, response: "check your email")

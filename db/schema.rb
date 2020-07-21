@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2020_07_15_151411) do
     t.boolean "teacher_response"
     t.string "response"
     t.string "time"
+    t.boolean "acknowledged", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["student_id"], name: "index_conversations_on_student_id"
@@ -51,6 +52,8 @@ ActiveRecord::Schema.define(version: 2020_07_15_151411) do
   create_table "students", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
+    t.string "username"
+    t.string "password_digest"
     t.string "email"
     t.string "dob"
     t.datetime "created_at", precision: 6, null: false
@@ -69,6 +72,8 @@ ActiveRecord::Schema.define(version: 2020_07_15_151411) do
   create_table "teachers", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
+    t.string "username"
+    t.string "password_digest"
     t.string "subject"
     t.string "email"
     t.datetime "created_at", precision: 6, null: false

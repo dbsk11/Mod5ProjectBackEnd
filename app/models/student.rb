@@ -1,5 +1,5 @@
 class Student < ApplicationRecord
-    has_many :conversations
+    has_many :conversations, -> {order(created_at: :desc)}
     has_many :teachers, through: :conversations
     has_many :student_classes
     has_many :teacher_classes, through: :student_classes

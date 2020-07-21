@@ -11,6 +11,7 @@ class CreateConversations < ActiveRecord::Migration[6.0]
       t.boolean :teacher_response
       t.string :response
       t.string :time
+      t.boolean :acknowledged, default: false
 
       t.timestamps
     end

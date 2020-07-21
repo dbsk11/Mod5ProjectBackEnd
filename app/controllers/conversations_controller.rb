@@ -1,7 +1,12 @@
 class ConversationsController < ApplicationController
     def index
-        @conversations = Conversation.all
+        @conversations = Conversation.order(created_at: :desc)
         render json: @conversations
+    end
+    
+    def create
+        @conversation = Conversation.create(conversation_params)
+        render json: @conversation
     end
     
     def show
@@ -15,9 +20,15 @@ class ConversationsController < ApplicationController
         render json: @conversation
     end
 
+    def destroy
+        @conversation = Conversation.find(params[:id])
+        @conversation.destroy
+        render json: @conversation
+    end
+
     private
 
     def conversation_params
-        params.permit(:teacher_response, :response, :time, :klass, :topic, :urgency, :office_hours, :description)
+        params.permit(:teacher_response, :response, :time, :klass, :topic, :urgency, :office_hours, :description, :teacher_id, :student_id)
     end
 end
