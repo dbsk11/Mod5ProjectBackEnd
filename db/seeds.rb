@@ -17,14 +17,14 @@ puts "destroying studentclasses"
 StudentClass.destroy_all
 
 puts "creating teachers"
-Teacher.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, subject: "Science", email: Faker::Internet.email)
-Teacher.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, subject: "Science", email: Faker::Internet.email)
-Teacher.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, subject: "Math", email: Faker::Internet.email)
-Teacher.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, subject: "Math", email: Faker::Internet.email)
-Teacher.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, subject: "History", email: Faker::Internet.email)
-Teacher.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, subject: "History", email: Faker::Internet.email)
-Teacher.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, subject: "English", email: Faker::Internet.email)
-Teacher.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, subject: "English", email: Faker::Internet.email)
+Teacher.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, subject: "Science", email: Faker::Internet.email, username: "Jessica", password: "abc123")
+Teacher.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, subject: "Science", email: Faker::Internet.email, username: "Josh", password: "abc123")
+Teacher.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, subject: "Math", email: Faker::Internet.email, username: "Jen", password: "abc123")
+Teacher.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, subject: "Math", email: Faker::Internet.email, username: "Saneta", password: "abc123")
+Teacher.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, subject: "History", email: Faker::Internet.email, username: "Cathy", password: "abc123")
+Teacher.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, subject: "History", email: Faker::Internet.email, username: "Janice", password: "abc123")
+Teacher.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, subject: "English", email: Faker::Internet.email, username: "Jenny", password: "abc123")
+Teacher.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, subject: "English", email: Faker::Internet.email, username: "Essie", password: "abc123")
 
 puts "creating classes"
 Klass.create(name: "Biology", subject: "Science")
