@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get '/teachers/:id', to: 'teachers#show'
   get '/teachers/stay_logged_in', to: 'teachers#stay_logged_in'
   post '/teachers/login', to: 'teachers#login'
+  post '/teachers', to: 'teachers#create'
 
   get '/teacherclasses/', to: 'teacher_classes#index'
 

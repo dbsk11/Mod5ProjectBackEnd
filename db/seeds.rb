@@ -90,7 +90,7 @@ TeacherClass.create(teacher_id: 8, klass_id: 16)
 32
 puts "creating students"
 40.times do 
-    Student.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, dob: Faker::Date.birthday(min_age: 10, max_age: 18))
+    Student.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, dob: Faker::Date.birthday(min_age: 10, max_age: 18), username: Faker::Name.first_name, password: "abc123")
 end
 
 puts "creating studentclasses"

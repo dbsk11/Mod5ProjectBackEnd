@@ -1,7 +1,7 @@
-class ApplicationController < ActionController::API
+class ApplicationController < ActionController::Base
     def encode_token(payload)
         # should store secret in env variable
-        JWT.encode(payload, 'alphabet_soup')
+        JWT.encode(payload, 'my_s3cr3t')
     end
      
     def auth_header
@@ -11,29 +11,29 @@ class ApplicationController < ActionController::API
     
     def decoded_token
         if auth_header
-            token = auth_header
+            token = auth_header.split(' ')[1]
             # header: { 'Authorization': 'Bearer <token>' }
             begin
-            JWT.decode(token, 'alphabet_soup', true, algorithm: 'HS256')
+                JWT.decode(token, 'my_s3cr3t', true, algorithm: 'HS256')
             rescue JWT::DecodeError
-            nil
+                nil
             end
         end
     end
     
-    def logged_in_user
+    def logged_in_teacher
         if decoded_token
-            user_id = decoded_token[0]['user_id']
-            @user = User.find_by(id: user_id)
+            teacher_id = decoded_token[0]['teacher_id']
+            @teacher = Teacher.find_by(id: teacher_id)
         end
     end
     
     def logged_in?
-        !!logged_in_user
+        !!logged_in_teacher
     end
     
     def authorized
-        render json: { error: 'Please log in' }, status: :unauthorized unless logged_in?
+        render json: { message: 'Please log in' }, status: :unauthorized unless logged_in?
     end
 
 end
