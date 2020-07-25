@@ -20,7 +20,7 @@ class TeachersController < ApplicationController
                 token: wristband
             }
         else
-            render json: {error: "Incorrect username and or password"}
+            render json: {error: "Incorrect username and/or password"}
         end 
     end
 
