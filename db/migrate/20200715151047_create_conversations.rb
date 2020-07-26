@@ -10,6 +10,7 @@ class CreateConversations < ActiveRecord::Migration[6.0]
       t.string :description
       t.boolean :teacher_response
       t.string :response
+      t.string :date
       t.string :time
       t.boolean :acknowledged, default: false
 
