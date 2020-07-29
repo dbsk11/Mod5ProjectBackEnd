@@ -1,6 +1,6 @@
 class ConversationsController < ApplicationController
     def index
-        @conversations = Conversation.order(created_at: :desc)
+        @conversations = Conversation.order(updated_at: :desc)
         render json: @conversations
     end
     
@@ -29,6 +29,6 @@ class ConversationsController < ApplicationController
     private
 
     def conversation_params
-        params.permit(:teacher_response, :response, :time, :klass, :topic, :urgency, :office_hours, :description, :teacher_id, :student_id)
+        params.permit(:teacher_response, :response, :time, :office_hours_date, :klass, :topic, :urgency, :office_hours, :description, :teacher_id, :student_id, :acknowledged)
     end
 end

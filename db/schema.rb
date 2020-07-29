@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2020_07_15_151411) do
     t.string "description"
     t.boolean "teacher_response"
     t.string "response"
-    t.string "date"
+    t.string "office_hours_date"
     t.string "time"
     t.boolean "acknowledged", default: false
     t.datetime "created_at", precision: 6, null: false
