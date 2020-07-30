@@ -90,7 +90,7 @@ TeacherClass.create(teacher_id: 8, klass_id: 16)
 32
 
 puts "creating students"
-Student.create(first_name: "Beth", last_name: Faker::Name.last_name, email: Faker::Internet.email, dob: Faker::Date.birthday(min_age: 10, max_age: 18), username: "Leina", password: "abc123")
+Student.create(first_name: "Beth", last_name: Faker::Name.last_name, email: Faker::Internet.email, dob: Faker::Date.birthday(min_age: 10, max_age: 18), username: "Beth", password: "abc123")
 39.times do 
     Student.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, dob: Faker::Date.birthday(min_age: 10, max_age: 18), username: Faker::Name.first_name, password: "abc123")
 end
@@ -267,9 +267,13 @@ StudentClass.create(student_id: 40, teacher_class_id: 24)
 StudentClass.create(student_id: 40, teacher_class_id: 32)
 
 puts "creating conversations"
-Conversation.create(teacher_id: 1, student_id: 1, klass: "Biology", topic: "homework", urgency: "immediate", office_hours: true, description: "question #32 is confusing", teacher_response: true, response: "check your email", office_hours_date: "August 1, 2020", time: "2:00PM")
+Conversation.create(teacher_id: 1, student_id: 1, klass: "Biology", topic: "homework", urgency: "immediate", office_hours: true, description: "question #32 is confusing", teacher_response: true, response: "check your email", office_hours_date: "August 1, 2020", time: "2:00PM", acknowledged: true)
+Conversation.create(teacher_id: 1, student_id: 1, klass: "Biology", topic: "lecture", urgency: "immediate", office_hours: true, description: "do you have any additional videos we can watch about mitosis", teacher_response: true, response: "check your email", office_hours_date: "July 28th, 2020", time: "2:15PM")
+Conversation.create(teacher_id: 1, student_id: 1, klass: "Biology", topic: "classwork", urgency: "immediate", office_hours: true, description: "what happens if we don't answer all the questions", teacher_response: true, response: "check your email", office_hours_date: "July 27th, 2020", time: "2:15PM")
 Conversation.create(teacher_id: 3, student_id: 1, klass: "Algebra I", topic: "homework", urgency: "immediate", office_hours: false, description: "question #12-20 is hard to understand", teacher_response: true, response: "check your email", office_hours_date: "August 1, 2020")
+Conversation.create(teacher_id: 3, student_id: 1, klass: "Algebra I", topic: "classwork", urgency: "immediate", office_hours: false, description: "i'm not sure what the critical thinking question is asking", teacher_response: true, response: "check your email", office_hours_date: "August 1, 2020")
 Conversation.create(teacher_id: 5, student_id: 1, klass: "US History I", topic: "homework", urgency: "immediate", office_hours: false, description: "i'm stuck on how to start the DBQ", teacher_response: false)
+Conversation.create(teacher_id: 5, student_id: 1, klass: "US History I", topic: "homework", urgency: "immediate", office_hours: false, description: "what textbook pages should we reference for the homework", teacher_response: false)
 Conversation.create(teacher_id: 7, student_id: 1, klass: "English I", topic: "homework", urgency: "immediate", office_hours: true, description: "i don't understand the extension questions", teacher_response:false)
 Conversation.create(teacher_id: 1, student_id: 2, klass: "Chemistry", topic: "classwork", urgency: "immediate", office_hours: true, description: "do we have to complete all the practice problems?", teacher_response: true, response: "check your email", office_hours_date: "August 1, 2020", time: "2:00PM")
 Conversation.create(teacher_id: 1, student_id: 3, klass: "Physics", topic: "lecture", urgency: "end of day", office_hours: false, description: "are there any videos I can watch about what we learned today", teacher_response: true, response: "check your email", office_hours_date: "August 1, 2020")
