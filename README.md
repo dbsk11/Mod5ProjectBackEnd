@@ -1,24 +1,23 @@
-# README
+# Ask:Answer
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A student/teacher platform which allows students to message teachers with questions and/or request office hours. The teacher can view messages, respond to messages, and schedule office hours. It is built with a React frontend and Rails backend.
 
-Things you may want to cover:
+## How It Works
 
-* Ruby version
+A user can login as a student or teacher. A student is able to view all of their classes, create new messages, view old messages, view teacher responses, and acknowledge teacher responses. A teacher is able to view all their classes, view student messages, respond to student messages, schedule office hours, view previous responses, and view student acknowledgements. 
 
-* System dependencies
+## Built Using?
 
-* Configuration
+Ask:Answer was built with a Rails backend which handles user authentication as well as student and teacher data and information. The frontend is built with React which handles neatly displaying the classes, requests, and responses for the teacher and student users. 
 
-* Database creation
+## Software Requirements
 
-* Database initialization
+- Ruby on Rails
+- Node.JS
 
-* How to run the test suite
+## How to Run (backend)
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Clone this repo as well as the [frontend repo](https://github.com/dbsk11/AskAnswerFrontEnd), navigate to the project root in your terminal.
+- Run `rails db:create`
+- Run `rails db:seed`
+- Run `rails s`
